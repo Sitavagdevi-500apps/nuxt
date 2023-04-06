@@ -135,6 +135,7 @@ const tags_transform = ref({});
 // Get tags from appconfig
 const { data: tagsData } = await useAuthLazyFetch(`${props.geturl}`, {});
 tags.value = tagsData.value;
+
 // To prepare an object that each key has an array of tags based on their initial letters
 const editInput = ref([]);
 

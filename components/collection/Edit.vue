@@ -8,6 +8,7 @@
       <div class="flex-grow">
         <div class="relative w-full">
           <input
+            placeholder="Enter tag name"
             v-model="selectedTag"
             type="text"
             class="flex w-full border rounded-lg focus:outline-none border-gray-300 focus:border-indigo-300 h-10"
