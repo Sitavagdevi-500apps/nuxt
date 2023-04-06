@@ -1,18 +1,5 @@
 <template>
   <div>
-    <div class="sm:hidden">
-      <label for="tabs" class="sr-only">Select a tab</label>
-      <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
-      <select
-        id="tabs"
-        name="tabs"
-        class="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-      >
-        <option v-for="tab in tabs" :key="tab.name" :selected="tab.current">
-          {{ tab.name }}
-        </option>
-      </select>
-    </div>
     <div class="hidden sm:block">
       <div class="border-b border-gray-200">
         <nav class="-mb-px flex space-x-8" aria-label="Tabs">
@@ -32,7 +19,6 @@
         </nav>
       </div>
     </div>
-
     <div
       class="block max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:bg-gray-700 mt-2"
     >
@@ -139,7 +125,10 @@ tags.value = tagsData.value;
 // To prepare an object that each key has an array of tags based on their initial letters
 const editInput = ref([]);
 
-const tabs = [{ name: "Tags", href: "#", current: true }];
+const tabs = [
+  { name: "Notes", href: "/TestNotes", current: true },
+  { name: "Tags", href: "/TestTag", current: true },
+];
 const isOpen = ref(false);
 
 const cancel = () => {
