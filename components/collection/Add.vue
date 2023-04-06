@@ -20,7 +20,7 @@
     <button
       type="button"
       class="block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300 my-6"
-      @click="closeModal(false)"
+      @click="cancel(false)"
     >
       Cancel
     </button>
@@ -37,7 +37,7 @@
 const tagName = ref("");
 
 const emit = defineEmits(["formSave", "hide"]);
-const closeModal = (form: any) => {
+const cancel = (form: any) => {
   emit("hide", form);
 };
 const save = (form: any) => {
@@ -45,4 +45,3 @@ const save = (form: any) => {
   tagName.value.length ? emit("form-save", tagName.value) : "";
 };
 </script>
-

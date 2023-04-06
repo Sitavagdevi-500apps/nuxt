@@ -57,7 +57,7 @@
         </div>
         <div class="mt-4 sm:mt-0">
           <TransitionRoot appear :show="isOpen" as="template">
-            <Dialog as="div" @cancel="closeModal" class="relative z-10">
+            <Dialog as="div" @cancel="cancel" class="relative z-10">
               <TransitionChild
                 as="template"
                 enter="duration-300 ease-out"
@@ -86,7 +86,7 @@
                     <DialogPanel
                       class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
                     >
-                      <CollectionAdd @form-save="addTag" @hide="closeModal" />
+                      <CollectionAdd @form-save="addTag" @hide="cancel" />
                     </DialogPanel>
                   </TransitionChild>
                 </div>
@@ -141,7 +141,7 @@ const editInput = ref([]);
 const tabs = [{ name: "Tags", href: "#", current: true }];
 const isOpen = ref(false);
 
-const closeModal = () => {
+const cancel = () => {
   isOpen.value = false;
 };
 const openModal = () => {

@@ -18,7 +18,7 @@
         <!--Update button-->
         <button
           class="flex items-center justify-center bg-indigo-600 hover:bg-indigo-500 rounded-lg text-white p-2 px-3 flex-shrink-0"
-          @click="editTag(selectedTag), (editInput = false)"
+          @click="edit(selectedTag), (editInput = false)"
         >
           Save
         </button>
@@ -36,7 +36,7 @@ const selectedTag = ref(props.tag.name);
 // Close input after editing
 const editInput = ref("true");
 const emit = defineEmits(["edit"]);
-const editTag = (data: any) => {
+const edit = (data: any) => {
   emit("edit", { uid: props.tag.uid, tag: data });
   // Empty the Tag value
   selectedTag.value = "";
